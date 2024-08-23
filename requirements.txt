@@ -1,0 +1,45 @@
+gas_utility_service/
+│
+├── manage.py
+├── requirements.txt
+├── gas_utility_service/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   ├── wsgi.py
+│   └── static/
+│       └── css/
+│       └── js/
+
+├── customers/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   ├── forms.py
+│   ├── tests.py
+│   ├── serializers.py
+│   ├── templates/
+│   │  └── customers/
+│   │  └── base.html
+│   │  └── service_request_form.html
+│   │  └── request_tracking.html
+│   │  └── account_info.html
+│── support/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   ├── views.py
+│   ├── forms.py
+│   ├── tests.py
+│   ├── serializers.py
+│   ├── templates/
+│       └── support/
+│           └── manage_requests.html
+│           └── request_detail.html
+└── db.sqlite3
