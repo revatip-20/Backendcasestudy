@@ -1,0 +1,31 @@
+{% extends 'customer/base.html' %}
+
+{% block title %}Manage Service Requests{% endblock %}
+
+{% block content %}
+<h1>Manage Service Requests</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Request Type</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Submitted At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request.user.username }}</td>
+            <td>{{ request.get_request_type_display }}</td>
+            <td>{{ request.description }}</td>
+            <td>{{ request.get_status_display }}</td>
+            <td>{{ request.created_at }}</td>
+            <td><a href="{% url 'request_detail' request.pk %}">View Details</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

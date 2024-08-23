@@ -1,0 +1,17 @@
+{% extends 'support/base.html' %}
+
+{% block title %}Request Details{% endblock %}
+
+{% block content %}
+<h1>Request Details</h1>
+<p><strong>Customer:</strong> {{ service_request.user.username }}</p>
+<p><strong>Request Type:</strong> {{ service_request.get_request_type_display }}</p>
+<p><strong>Description:</strong> {{ service_request.description }}</p>
+<p><strong>Status:</strong> {{ service_request.get_status_display }}</p>
+<p><strong>Submitted At:</strong> {{ service_request.created_at }}</p>
+<p><strong>Last Updated:</strong> {{ service_request.updated_at }}</p>
+{% if service_request.attachment %}
+<p><strong>Attachment:</strong> <a href="{{ service_request.attachment.url }}">Download</a></p>
+{% endif %}
+<a href="manage_requests">Back to Manage Requests</a>
+{% endblock %}
