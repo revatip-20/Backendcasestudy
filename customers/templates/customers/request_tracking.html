@@ -1,0 +1,29 @@
+{% extends 'customers/base.html' %}
+
+{% block title %}Track Service Requests{% endblock %}
+
+{% block content %}
+<h1>Your Service Requests</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Request Type</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Submitted At</th>
+            <th>Updated At</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request.get_request_type_display }}</td>
+            <td>{{ request.description }}</td>
+            <td>{{ request.get_status_display }}</td>
+            <td>{{ request.created_at }}</td>
+            <td>{{ request.updated_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
